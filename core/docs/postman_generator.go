@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/nyelnizy/conversate-server/core/docs/params"
+	"github.com/rbretecher/go-postman-collection"
 	"log"
 	"os"
 )

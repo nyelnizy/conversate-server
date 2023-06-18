@@ -7,6 +7,7 @@ require (
 	github.com/emirpasic/gods v1.18.1
 	github.com/gobwas/ws v1.2.1
 	github.com/golang-jwt/jwt/v4 v4.5.0
+	github.com/rbretecher/go-postman-collection v0.9.0
 )
 
 require (
