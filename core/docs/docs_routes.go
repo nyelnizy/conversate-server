@@ -17,6 +17,7 @@ func RenderDocs(w http.ResponseWriter, r *http.Request) {
 	//	return
 	//}
 	//filePath := filepath.Join(path, "pwa/index.html")
+	//
 	filePath := "./pwa/index.html"
 	tmpl, err := template.ParseFiles(filePath)
 	if err != nil {
