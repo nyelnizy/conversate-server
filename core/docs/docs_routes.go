@@ -6,7 +6,10 @@ import (
 	"github.com/golang-jwt/jwt/v4"
 	"html/template"
 	"io/ioutil"
+	"log"
 	"net/http"
+	"path"
+	"path/filepath"
 	"time"
 )
 
@@ -18,8 +21,15 @@ func RenderDocs(w http.ResponseWriter, r *http.Request) {
 	//}
 	//filePath := filepath.Join(path, "pwa/index.html")
 	//
-	filePath := "./pwa/index.html"
-	tmpl, err := template.ParseFiles(filePath)
+	//filePath := "./pwa/index.html"
+	dir, err := filepath.Abs("./pwa/")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	filePath := path.Join(dir, "index.html")
+	tmpl := template.Must(template.ParseFiles(filePath))
+	//tmpl, err := template.ParseFiles(filePath)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
