@@ -17,10 +17,16 @@ type OutputPrimitive struct {
 	Name    string      `json:"name"`
 	Example interface{} `json:"example"`
 }
+
 type DocsConfig struct {
-	AppName        string
-	AppVersion     string
-	AppDescription string
-	PostManBaseUrl string
-	DocsActions    map[string]*ApiDoc
+	AppName         string
+	AppVersion      string
+	AppDescription  string
+	PostManBaseUrl  string
+	DocsEmail       string
+	DocsPassword    string
+	DocsJwtIssuer   string
+	DocsJwtAudience string
+	DocsJwtSecret   string
+	DocsActions     map[string]*ApiDoc
 }

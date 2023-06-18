@@ -7,18 +7,17 @@ import (
 	"html/template"
 	"io/ioutil"
 	"net/http"
-	"os"
-	"path/filepath"
 	"time"
 )
 
 func RenderDocs(w http.ResponseWriter, r *http.Request) {
-	path, err := os.Getwd()
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-	filePath := filepath.Join(path, "pwa/index.html")
+	//path, err := os.Getwd()
+	//if err != nil {
+	//	http.Error(w, err.Error(), http.StatusInternalServerError)
+	//	return
+	//}
+	//filePath := filepath.Join(path, "pwa/index.html")
+	filePath := "./pwa/index.html"
 	tmpl, err := template.ParseFiles(filePath)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -86,9 +85,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
-	email := os.Getenv("DOCS_LOGIN_EMAIL")
-	password := os.Getenv("DOCS_LOGIN_PASSWORD")
-	if data.Email != email || data.Password != password {
+	if data.Email != config.DocsEmail || data.Password != config.DocsPassword {
 		fmt.Println("Invalid Password")
 		w.WriteHeader(422)
 		_, _ = w.Write([]byte("Invalid Credentials"))
@@ -103,18 +100,16 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	_, _ = w.Write([]byte(token))
 }
 func generateToken() (string, error) {
-	issuer := os.Getenv("APP_URL")
-	audience := os.Getenv("CLIENT_URL")
-	hmacSecret := os.Getenv("HMAC_SECRET")
+
 	timeInMinutes := 24 * 60
 	expiresAt := &jwt.NumericDate{Time: time.Now().Add(time.Minute * time.Duration(timeInMinutes))}
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.RegisteredClaims{
-		Issuer:    issuer,
+		Issuer:    config.DocsJwtIssuer,
 		ExpiresAt: expiresAt,
-		Audience:  []string{audience},
+		Audience:  []string{config.DocsJwtAudience},
 	})
 	// Sign and get the complete encoded token as a string using the secret
-	tokenString, err := token.SignedString([]byte(hmacSecret))
+	tokenString, err := token.SignedString([]byte(config.DocsJwtSecret))
 	if err != nil {
 		return "", err
 	}
