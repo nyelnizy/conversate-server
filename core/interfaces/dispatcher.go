@@ -1,7 +1,7 @@
 package intfc
 
 import (
-	sockets "orionedge.co/conversate/core"
+	sockets "github.com/nyelnizy/conversate-server/core"
 )
 
 type Dispatcher interface {

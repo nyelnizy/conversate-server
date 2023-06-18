@@ -1,6 +1,6 @@
 package impl
 
-import "orionedge.co/conversate/core/interfaces"
+import "github.com/nyelnizy/conversate-server/core/interfaces"
 
 var jwtValidator intfc.Validator
 

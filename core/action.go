@@ -2,8 +2,8 @@ package core
 
 import (
 	"context"
-	"orionedge.co/conversate/core/docs/params"
-	"orionedge.co/conversate/response"
+	"github.com/nyelnizy/conversate-server/core/docs/params"
+	"github.com/nyelnizy/conversate-server/response"
 )
 
 type Action struct {

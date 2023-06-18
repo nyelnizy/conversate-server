@@ -1,6 +1,6 @@
 package intfc
 
-import "orionedge.co/conversate/core"
+import "github.com/nyelnizy/conversate-server/core"
 
 type ActionStore interface {
 	AddAction(newAction *core.Action)

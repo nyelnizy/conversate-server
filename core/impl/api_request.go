@@ -4,10 +4,10 @@ import (
 	"context"
 	"encoding/json"
 	"github.com/gobwas/ws/wsutil"
-	"orionedge.co/conversate/core"
-	"orionedge.co/conversate/logs"
-	"orionedge.co/conversate/response"
-	"orionedge.co/conversate/utils"
+	"github.com/nyelnizy/conversate-server/core"
+	"github.com/nyelnizy/conversate-server/logs"
+	"github.com/nyelnizy/conversate-server/response"
+	"github.com/nyelnizy/conversate-server/utils"
 )
 
 const (

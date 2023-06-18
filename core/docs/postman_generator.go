@@ -3,9 +3,8 @@ package docs
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/rbretecher/go-postman-collection"
+	"github.com/nyelnizy/conversate-server/core/docs/params"
 	"log"
-	"orionedge.co/conversate/core/docs/params"
 	"os"
 )
 

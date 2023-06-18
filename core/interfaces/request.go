@@ -1,6 +1,6 @@
 package intfc
 
-import "orionedge.co/conversate/response"
+import "github.com/nyelnizy/conversate-server/response"
 
 type Request interface {
 	Authenticate() bool

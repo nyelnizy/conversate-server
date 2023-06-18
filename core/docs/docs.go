@@ -1,8 +1,8 @@
 package docs
 
 import (
-	"orionedge.co/conversate/core/docs/params"
-	"orionedge.co/conversate/core/interfaces"
+	"github.com/nyelnizy/conversate-server/core/docs/params"
+	"github.com/nyelnizy/conversate-server/core/interfaces"
 	"reflect"
 	"strings"
 )

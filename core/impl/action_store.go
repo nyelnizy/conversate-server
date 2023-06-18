@@ -2,7 +2,7 @@ package impl
 
 import (
 	"errors"
-	sockets "orionedge.co/conversate/core"
+	sockets "github.com/nyelnizy/conversate-server/core"
 )
 
 type DefaultActionStore struct {

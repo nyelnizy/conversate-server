@@ -2,12 +2,12 @@ package impl
 
 import (
 	"fmt"
-	"orionedge.co/conversate/core"
-	intfc "orionedge.co/conversate/core/interfaces"
-	"orionedge.co/conversate/events"
-	"orionedge.co/conversate/logs"
-	"orionedge.co/conversate/response"
-	"orionedge.co/conversate/utils"
+	"github.com/nyelnizy/conversate-server/core"
+	intfc "github.com/nyelnizy/conversate-server/core/interfaces"
+	"github.com/nyelnizy/conversate-server/events"
+	"github.com/nyelnizy/conversate-server/logs"
+	"github.com/nyelnizy/conversate-server/response"
+	"github.com/nyelnizy/conversate-server/utils"
 )
 
 type RequestDispatcher struct {
