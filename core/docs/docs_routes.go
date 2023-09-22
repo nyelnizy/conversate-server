@@ -1,9 +1,9 @@
 package docs
 
 import (
+	"embed"
 	"encoding/json"
 	"fmt"
-	rice "github.com/GeertJohan/go.rice"
 	"github.com/golang-jwt/jwt/v4"
 	"html/template"
 	"io/ioutil"
@@ -12,16 +12,15 @@ import (
 	"time"
 )
 
+//go:embed pwa
+var content embed.FS
+
 func RenderDocs(w http.ResponseWriter, r *http.Request) {
-	box, err := rice.FindBox("./pwa")
-	if err != nil {
-		panic(err)
-	}
-	htmlContent := box.MustString("index.html")
+	htmlContent, err := content.ReadFile("pwa/index.html")
 	if err != nil {
 		log.Fatal(err)
 	}
-	tmpl := template.Must(template.New("docs-tmpl").Parse(htmlContent))
+	tmpl := template.Must(template.New("docs-tmpl").Parse(string(htmlContent)))
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
