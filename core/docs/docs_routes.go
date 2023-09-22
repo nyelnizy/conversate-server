@@ -3,33 +3,25 @@ package docs
 import (
 	"encoding/json"
 	"fmt"
+	rice "github.com/GeertJohan/go.rice"
 	"github.com/golang-jwt/jwt/v4"
 	"html/template"
 	"io/ioutil"
 	"log"
 	"net/http"
-	"path"
-	"path/filepath"
 	"time"
 )
 
 func RenderDocs(w http.ResponseWriter, r *http.Request) {
-	//path, err := os.Getwd()
-	//if err != nil {
-	//	http.Error(w, err.Error(), http.StatusInternalServerError)
-	//	return
-	//}
-	//filePath := filepath.Join(path, "pwa/index.html")
-	//
-	//filePath := "./pwa/index.html"
-	dir, err := filepath.Abs("./pwa/")
+	box, err := rice.FindBox("./pwa")
+	if err != nil {
+		panic(err)
+	}
+	htmlContent := box.MustString("index.html")
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	filePath := path.Join(dir, "index.html")
-	tmpl := template.Must(template.ParseFiles(filePath))
-	//tmpl, err := template.ParseFiles(filePath)
+	tmpl := template.Must(template.New("docs-tmpl").Parse(htmlContent))
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return

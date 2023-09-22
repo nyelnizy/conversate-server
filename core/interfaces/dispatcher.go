@@ -5,6 +5,6 @@ import (
 )
 
 type Dispatcher interface {
-	RegisterListener()
+	RegisterRequestListener()
 	ServeRequest(*sockets.RequestPacket)
 }

@@ -3,6 +3,7 @@ package conversate
 import (
 	"flag"
 	"fmt"
+	rice "github.com/GeertJohan/go.rice"
 	"github.com/nyelnizy/conversate-server/core/docs"
 	"github.com/nyelnizy/conversate-server/core/impl"
 	intfc "github.com/nyelnizy/conversate-server/core/interfaces"
@@ -34,6 +35,9 @@ func (s *server) Run(actions ...intfc.ActionSetup) {
 	d := impl.NewRequestDispatcher(store)
 	d.RegisterRequestListener()
 	impl.InitializeQueue()
+	box := rice.MustFindBox("../core/docs/pwa/assets")
+	assetsFileServer := http.StripPrefix("/assets/", http.FileServer(box.HTTPBox()))
+	http.Handle("/assets/", assetsFileServer)
 	http.HandleFunc("/docs", docs.RenderDocs)
 	http.HandleFunc("/api-docs", docs.GetDocs)
 	http.HandleFunc("/api-login", docs.Login)

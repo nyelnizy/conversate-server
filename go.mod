@@ -3,6 +3,7 @@ module github.com/nyelnizy/conversate-server
 go 1.18
 
 require (
+	github.com/GeertJohan/go.rice v1.0.3
 	github.com/auth0/go-jwt-middleware/v2 v2.1.0
 	github.com/emirpasic/gods v1.18.1
 	github.com/gobwas/ws v1.2.1
@@ -11,6 +12,7 @@ require (
 )
 
 require (
+	github.com/daaku/go.zipexe v1.0.2 // indirect
 	github.com/gobwas/httphead v0.1.0 // indirect
 	github.com/gobwas/pool v0.2.1 // indirect
 	github.com/pkg/errors v0.9.1 // indirect

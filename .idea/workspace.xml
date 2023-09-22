@@ -7,6 +7,186 @@
     <list default="true" id="a4d64359-2db0-4a82-8fed-67ac4969a4e9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/docs/docs_routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/docs_routes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.1562c9b5.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.9a56f9c7.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.15d9f942.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.221410bd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.2737bab3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.446e505d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.4d3270b2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.60320a07.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.758f078f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.9d174591.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.a2b6e820.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.a9fe06ce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.aa0ff66a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.db1a7ac7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.e7869d5e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.ed4aeead.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.f1a8f603.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.0166d8d4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.10e97bbe.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.14dbfa90.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.17d98e13.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.1950c362.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.7d96ce6a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.820f1557.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.a1f44128.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.b12c7db1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.b36c181c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.bcfe2b61.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.cdb1cf25.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.cf8bc81a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.df3d2947.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.fad246e4.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.c20eebe7.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.fe5f967c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/Login.21eaacd6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/Login.2834bb8e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/Login.2bbbf96e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/Login.48f1eac2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/Login.4a9a1b01.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/Login.838cc67d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/Login.88c43556.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/Login.908508fd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/Login.91a4602d.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/Login.97d0125f.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/Login.a84a6990.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/Login.c35de54e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/Login.c7ac3859.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/Login.cb67f75f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/Login.dd1bf069.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/Login.f71b7a8e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.13f95667.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.1d394a75.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.2ba622ad.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.377fb309.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.3bf0cdc4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.4105c061.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.45085796.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.03e1d51f.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.45b9e1a0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.62ae1c03.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.6433276b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.69039e1f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.6bafaec9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.c4f8e682.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.c654a17a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.e5b38ade.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.e6a8cc69.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.0f9728e6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.382f5939.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.3f9ae6cf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.40378ec1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.57e8dfa6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.61272c56.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.7e68e73a.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.d88ad911.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.834a2d5d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.9bb798e1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.9f1759a7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.aa82fa32.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.b4a5c80d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.b9cca8da.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.e6ead970.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.f369d9fa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.f86a62ba.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/axios.0ee554e7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/axios.1148d083.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/axios.1738d4d7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/axios.2807f7c8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/axios.32420822.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/axios.43fdb558.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/axios.5f39ae1a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/axios.7407d9d5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/axios.75b998c2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/axios.820d4d30.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/axios.9868bdba.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/axios.f8a65f21.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/axios.9e666de6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/axios.d4b82603.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/axios.d7d85a93.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/axios.dd7f2941.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/axios.ebe3422f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.011f3efe.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.0b2c50f9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.1493b985.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.2098f574.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.87e316aa.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.3473ae37.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.4b1878d8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.4c2c0241.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.5ec75a56.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.7aa4fbab.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.7e818812.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.7fed49a8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.8a1c7f6f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.9161122e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.ae4e38e9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.cd73809e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.d043d81d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/icons/apple-icon-120x120.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/icons/apple-icon-152x152.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/icons/apple-icon-167x167.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/icons/apple-icon-180x180.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/icons/favicon-128x128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/icons/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/icons/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/icons/favicon-96x96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/icons/icon-128x128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/icons/icon-192x192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/icons/icon-256x256.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/icons/icon-384x384.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/icons/icon-512x512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/icons/ms-icon-144x144.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/icons/safari-pinned-tab.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.0768181a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.50fbc607.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.54862f1c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.550b111d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.5de611e1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.6a30411f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.8a6e5612.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.8addfbc3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.8eaa04ed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.90f12315.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.acc98e1c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.afc233fa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.b11e683c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.b6f1e01e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.bde733f1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.e74729ea.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.fb2fde81.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/index.39a07642.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/uid.0f40919c.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/uid.c9256555.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/uid.14d759c2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/uid.252d3595.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/uid.25f4ee1c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/uid.27f6dd6e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/uid.2d3d0506.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/uid.58c94830.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/uid.7bfa873a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/uid.7fb41597.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/uid.8620ffee.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/uid.8c9ac0be.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/uid.8fe26797.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/uid.b9f624ef.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/uid.e92bcf53.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/uid.eeb1c44a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/use-key-composition.0cda9bfe.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/use-key-composition.2ae26364.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/use-key-composition.34cb7342.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/use-key-composition.40b46e9d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/use-key-composition.46f68833.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/use-key-composition.4e4d69a9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/use-key-composition.4f761332.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/use-key-composition.65efacf0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/use-key-composition.576e6997.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/use-key-composition.62f8905b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/use-key-composition.6521351d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/use-key-composition.6543bace.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/use-key-composition.b70a35f5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/use-key-composition.bafdcc3b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/use-key-composition.d7f41b11.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/use-key-composition.e151dc47.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/sw.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/interfaces/dispatcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/interfaces/dispatcher.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entry/entry.go" beforeDir="false" afterPath="$PROJECT_DIR$/entry/entry.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
