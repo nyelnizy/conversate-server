@@ -1,9 +1,9 @@
 package conversate
 
 import (
+	"embed"
 	"flag"
 	"fmt"
-	rice "github.com/GeertJohan/go.rice"
 	"github.com/nyelnizy/conversate-server/config"
 	"github.com/nyelnizy/conversate-server/core/docs"
 	"github.com/nyelnizy/conversate-server/core/impl"
@@ -24,6 +24,9 @@ func New(config *config.ServerConfig) *server {
 	return &server{config: config}
 }
 
+//go:embed core/docs/pwa/assets
+var content embed.FS
+
 func (s *server) Run(actions ...intfc.ActionSetup) {
 	impl.SetValidator(s.config.JwtValidator)
 	store := impl.NewDefaultActionStore()
@@ -36,8 +39,7 @@ func (s *server) Run(actions ...intfc.ActionSetup) {
 	d := impl.NewRequestDispatcher(store)
 	d.RegisterRequestListener()
 	impl.InitializeQueue()
-	box := rice.MustFindBox("core/docs/pwa/assets")
-	assetsFileServer := http.StripPrefix("/assets/", http.FileServer(box.HTTPBox()))
+	assetsFileServer := http.StripPrefix("/assets/", http.FileServer(http.Dir("core/docs/pwa/assets")))
 	http.Handle("/assets/", assetsFileServer)
 	http.HandleFunc("/docs", docs.RenderDocs)
 	http.HandleFunc("/api-docs", docs.GetDocs)
