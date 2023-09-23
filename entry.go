@@ -1,7 +1,6 @@
 package conversate
 
 import (
-	"embed"
 	"flag"
 	"fmt"
 	"github.com/nyelnizy/conversate-server/config"
@@ -24,9 +23,6 @@ func New(config *config.ServerConfig) *server {
 	return &server{config: config}
 }
 
-//go:embed core/docs/pwa/assets
-var content embed.FS
-
 func (s *server) Run(actions ...intfc.ActionSetup) {
 	impl.SetValidator(s.config.JwtValidator)
 	store := impl.NewDefaultActionStore()
@@ -39,7 +35,7 @@ func (s *server) Run(actions ...intfc.ActionSetup) {
 	d := impl.NewRequestDispatcher(store)
 	d.RegisterRequestListener()
 	impl.InitializeQueue()
-	assetsFileServer := http.StripPrefix("/assets/", http.FileServer(http.Dir("core/docs/pwa/assets")))
+	assetsFileServer := http.StripPrefix("/assets/", http.FileServer(http.Dir("docs/pwa/assets")))
 	http.Handle("/assets/", assetsFileServer)
 	http.HandleFunc("/docs", docs.RenderDocs)
 	http.HandleFunc("/api-docs", docs.GetDocs)
