@@ -1,13 +1,13 @@
-package conversate
+package golang
 
 import (
 	"flag"
 	"fmt"
 	rice "github.com/GeertJohan/go.rice"
+	"github.com/nyelnizy/conversate-server/config"
 	"github.com/nyelnizy/conversate-server/core/docs"
 	"github.com/nyelnizy/conversate-server/core/impl"
 	intfc "github.com/nyelnizy/conversate-server/core/interfaces"
-	"github.com/nyelnizy/conversate-server/entry/config"
 	"github.com/nyelnizy/conversate-server/logs"
 	"log"
 	"mime"
@@ -23,6 +23,7 @@ type server struct {
 func New(config *config.ServerConfig) *server {
 	return &server{config: config}
 }
+
 func (s *server) Run(actions ...intfc.ActionSetup) {
 	impl.SetValidator(s.config.JwtValidator)
 	store := impl.NewDefaultActionStore()
@@ -35,7 +36,7 @@ func (s *server) Run(actions ...intfc.ActionSetup) {
 	d := impl.NewRequestDispatcher(store)
 	d.RegisterRequestListener()
 	impl.InitializeQueue()
-	box := rice.MustFindBox("../core/docs/pwa/assets")
+	box := rice.MustFindBox("core/docs/pwa/assets")
 	assetsFileServer := http.StripPrefix("/assets/", http.FileServer(box.HTTPBox()))
 	http.Handle("/assets/", assetsFileServer)
 	http.HandleFunc("/docs", docs.RenderDocs)
@@ -53,7 +54,10 @@ func (s *server) Run(actions ...intfc.ActionSetup) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fs := http.FileServer(http.Dir(filepath.Join(path, "pwa/assets")))
+	if s.config.PublicFolder == "" {
+		s.config.PublicFolder = "public"
+	}
+	fs := http.FileServer(http.Dir(filepath.Join(path, s.config.PublicFolder)))
 	http.Handle(fmt.Sprintf("/%s/", s.config.PublicFolder),
 		http.StripPrefix(fmt.Sprintf("/%s/", s.config.PublicFolder), fs))
 	logs.LogStr(fmt.Sprintf("Waiting For Connections...: %s\n", s.config.Port))
