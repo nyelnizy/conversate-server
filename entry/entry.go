@@ -41,6 +41,7 @@ func (s *server) Run(actions ...intfc.ActionSetup) {
 	http.HandleFunc("/docs", docs.RenderDocs)
 	http.HandleFunc("/api-docs", docs.GetDocs)
 	http.HandleFunc("/api-login", docs.Login)
+	http.HandleFunc("/generate-postman-collection", docs.GenerateCollection)
 	// create a new handler to handle socket requests
 	h := impl.NewSocketsHandler()
 	http.HandleFunc("/", h.Handle)
@@ -57,7 +58,6 @@ func (s *server) Run(actions ...intfc.ActionSetup) {
 	http.Handle(fmt.Sprintf("/%s/", s.config.PublicFolder),
 		http.StripPrefix(fmt.Sprintf("/%s/", s.config.PublicFolder), fs))
 	logs.LogStr(fmt.Sprintf("Waiting For Connections...: %s\n", s.config.Port))
-
 	var addr = flag.String("addr", fmt.Sprintf(":%s", s.config.Port), "http service address")
 	if s.config.TlsCert != nil {
 		log.Fatal(http.ListenAndServeTLS(*addr, s.config.TlsCert.Cert, s.config.TlsCert.Key, nil))

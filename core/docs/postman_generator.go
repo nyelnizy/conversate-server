@@ -2,7 +2,6 @@ package docs
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/nyelnizy/conversate-server/core/docs/params"
 	"github.com/rbretecher/go-postman-collection"
 	"log"
@@ -36,11 +35,11 @@ func GetFeaturesForPostMan(actions map[string]*docsparams.ApiDoc) map[string][]*
 	}
 	return features
 }
+
 func GeneratePostmanCollection(actions map[string]*docsparams.ApiDoc) {
 	features := GetFeaturesForPostMan(actions)
 	v := postman.CreateVariable("token", "xxx")
 	c := postman.CreateCollection(config.AppName, config.AppDescription)
-	fmt.Println(len(features))
 	for name, endpoints := range features {
 		item := c.AddItemGroup(name)
 		for _, endpoint := range endpoints {
@@ -92,12 +91,10 @@ func GeneratePostmanCollection(actions map[string]*docsparams.ApiDoc) {
 	}
 	file, err := os.Create("postman_collection.json")
 	defer file.Close()
-
 	if err != nil {
 		log.Fatal(err)
 	}
 	err = c.Write(file, postman.V200)
-
 	if err != nil {
 		log.Fatal(err)
 	}
