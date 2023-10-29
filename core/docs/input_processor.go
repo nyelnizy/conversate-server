@@ -75,7 +75,7 @@ func getInputParameters(t reflect.Type, includes []string) []*ActionInput {
 				// Get the embedded field from the embedded type
 				embeddedField := embeddedType.Field(j)
 				jsonTag := embeddedField.Tag.Get("json")
-				fieldToInclude := embeddedField.Tag.Get("ex")
+				fieldToInclude := embeddedField.Tag.Get("in")
 				if jsonTag == "updated_at" || jsonTag == "created_at" || jsonTag == "deleted_at" || jsonTag == "" || jsonTag == "-" || !shouldIncludeField(fieldToInclude, includes) {
 					continue
 				}
