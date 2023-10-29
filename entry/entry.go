@@ -3,6 +3,7 @@ package conversate
 import (
 	"flag"
 	"fmt"
+	rice "github.com/GeertJohan/go.rice"
 	"github.com/nyelnizy/conversate-server/core/docs"
 	"github.com/nyelnizy/conversate-server/core/impl"
 	intfc "github.com/nyelnizy/conversate-server/core/interfaces"
@@ -22,6 +23,7 @@ type server struct {
 func New(config *config.ServerConfig) *server {
 	return &server{config: config}
 }
+
 func (s *server) Run(actions ...intfc.ActionSetup) {
 	impl.SetValidator(s.config.JwtValidator)
 	store := impl.NewDefaultActionStore()
@@ -34,8 +36,8 @@ func (s *server) Run(actions ...intfc.ActionSetup) {
 	d := impl.NewRequestDispatcher(store)
 	d.RegisterRequestListener()
 	impl.InitializeQueue()
-	//box := rice.MustFindBox("../core/docs/pwa/assets")
-	assetsFileServer := http.StripPrefix("/assets/", http.FileServer(http.Dir("docs")))
+	box := rice.MustFindBox("../core/docs/pwa/assets")
+	assetsFileServer := http.StripPrefix("/assets/", http.FileServer(box.HTTPBox()))
 	http.Handle("/assets/", assetsFileServer)
 	http.HandleFunc("/docs", docs.RenderDocs)
 	http.HandleFunc("/api-docs", docs.GetDocs)

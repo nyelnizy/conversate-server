@@ -120,8 +120,8 @@ func getFeatures() []*Feature {
 	}
 	return groupedFeatures
 }
-func excludesContain(tag string, excludes []string) bool {
-	for _, num := range excludes {
+func shouldIncludeField(tag string, includes []string) bool {
+	for _, num := range includes {
 		if num == tag {
 			return true
 		}

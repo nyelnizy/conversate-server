@@ -74,7 +74,7 @@ func getOutputParameters(t reflect.Type, excludes []string) []*ActionOutput {
 				embeddedField := embeddedType.Field(j)
 				jsonTag := embeddedField.Tag.Get("json")
 				excludeFromDoc := embeddedField.Tag.Get("ex")
-				if jsonTag == "" || jsonTag == "-" || excludesContain(excludeFromDoc, excludes) {
+				if jsonTag == "" || jsonTag == "-" || !shouldIncludeField(excludeFromDoc, excludes) {
 					continue
 				}
 				actionOutput := makeActionOutput(embeddedField, jsonTag, excludes)
@@ -83,7 +83,7 @@ func getOutputParameters(t reflect.Type, excludes []string) []*ActionOutput {
 		} else {
 			jsonTag := field.Tag.Get("json")
 			excludeFromDoc := field.Tag.Get("ex")
-			if jsonTag == "" || jsonTag == "-" || excludesContain(excludeFromDoc, excludes) {
+			if jsonTag == "" || jsonTag == "-" || !shouldIncludeField(excludeFromDoc, excludes) {
 				continue
 			}
 			actionOutput := makeActionOutput(field, jsonTag, excludes)

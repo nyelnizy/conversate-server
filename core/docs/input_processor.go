@@ -19,7 +19,7 @@ type ActionInput struct {
 	Children      []*ActionInput `json:"children"`
 }
 
-func makeActionInput(field reflect.StructField, jsonTag string, excludes []string) *ActionInput {
+func makeActionInput(field reflect.StructField, jsonTag string, includes []string) *ActionInput {
 	fieldType := field.Type
 	fieldKind := fieldType.Kind()
 	stringType := fieldType.String()
@@ -41,7 +41,7 @@ func makeActionInput(field reflect.StructField, jsonTag string, excludes []strin
 		Validations: strings.Split(field.Tag.Get("validate"), ","),
 	}
 	if stringType == "object" {
-		actionInput.Children = getInputParameters(fieldType, excludes)
+		actionInput.Children = getInputParameters(fieldType, includes)
 	}
 	if stringType == "array" {
 		elementType := field.Type.Elem()
@@ -56,12 +56,12 @@ func makeActionInput(field reflect.StructField, jsonTag string, excludes []strin
 			actionInput.PrimitiveType = "array"
 		}
 		if elementType.Kind() == reflect.Struct || elementType.Kind() == reflect.Slice {
-			actionInput.Children = getInputParameters(elementType, excludes)
+			actionInput.Children = getInputParameters(elementType, includes)
 		}
 	}
 	return actionInput
 }
-func getInputParameters(t reflect.Type, excludes []string) []*ActionInput {
+func getInputParameters(t reflect.Type, includes []string) []*ActionInput {
 	var actionInputList []*ActionInput
 	// iterate through the fields of the Person struct
 	for i := 0; i < t.NumField(); i++ {
@@ -75,35 +75,35 @@ func getInputParameters(t reflect.Type, excludes []string) []*ActionInput {
 				// Get the embedded field from the embedded type
 				embeddedField := embeddedType.Field(j)
 				jsonTag := embeddedField.Tag.Get("json")
-				excludeFromDoc := embeddedField.Tag.Get("ex")
-				if jsonTag == "updated_at" || jsonTag == "created_at" || jsonTag == "deleted_at" || jsonTag == "" || jsonTag == "-" || excludesContain(excludeFromDoc, excludes) {
+				fieldToInclude := embeddedField.Tag.Get("ex")
+				if jsonTag == "updated_at" || jsonTag == "created_at" || jsonTag == "deleted_at" || jsonTag == "" || jsonTag == "-" || !shouldIncludeField(fieldToInclude, includes) {
 					continue
 				}
-				actionInput := makeActionInput(embeddedField, jsonTag, excludes)
+				actionInput := makeActionInput(embeddedField, jsonTag, includes)
 				actionInputList = append(actionInputList, actionInput)
 			}
 		} else {
 			jsonTag := field.Tag.Get("json")
-			excludeFromDoc := field.Tag.Get("ex")
-			if jsonTag == "updated_at" || jsonTag == "created_at" || jsonTag == "deleted_at" || jsonTag == "" || jsonTag == "-" || excludesContain(excludeFromDoc, excludes) {
+			fieldToInclude := field.Tag.Get("in")
+			if jsonTag == "updated_at" || jsonTag == "created_at" || jsonTag == "deleted_at" || jsonTag == "" || jsonTag == "-" || !shouldIncludeField(fieldToInclude, includes) {
 				continue
 			}
-			actionInput := makeActionInput(field, jsonTag, excludes)
+			actionInput := makeActionInput(field, jsonTag, includes)
 			actionInputList = append(actionInputList, actionInput)
 		}
 	}
 	return actionInputList
 }
-func getActionInput(inputData interface{}, excludes []string) *ApiInput {
+func getActionInput(inputData interface{}, includes []string) *ApiInput {
 	input := &ApiInput{}
 	valueType := getActualType(inputData)
 	if valueType.Kind() == reflect.Struct {
 		input.Type = "object"
-		input.Parameters = getInputParameters(valueType, excludes)
+		input.Parameters = getInputParameters(valueType, includes)
 	} else {
 		input.Type = "array"
 		t := valueType.Elem()
-		input.Parameters = getInputParameters(t, excludes)
+		input.Parameters = getInputParameters(t, includes)
 	}
 	return input
 }
