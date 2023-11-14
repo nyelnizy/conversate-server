@@ -3,8 +3,7 @@ package core
 import (
 	"context"
 	"encoding/json"
-	"github.com/gobwas/ws"
-	"net"
+	"github.com/gorilla/websocket"
 )
 
 type RequestPacket struct {
@@ -13,12 +12,12 @@ type RequestPacket struct {
 	Action    string      `json:"action"`
 	Parameter interface{} `json:"parameter"`
 	Token     string      `json:"token"`
-	Conn      net.Conn
-	OptCode   ws.OpCode
+	Conn      *websocket.Conn
+	OptCode   int
 	Context   context.Context
 }
 
-func NewRequestPacket(request []byte, conn net.Conn, code ws.OpCode, ctx context.Context) (*RequestPacket, error) {
+func NewRequestPacket(request []byte, conn *websocket.Conn, code int, ctx context.Context) (*RequestPacket, error) {
 	var rp RequestPacket
 	if err := json.Unmarshal(request, &rp); err != nil {
 		return nil, err

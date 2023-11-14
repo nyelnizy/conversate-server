@@ -3,39 +3,45 @@ package impl
 import (
 	"context"
 	"fmt"
-	"github.com/gobwas/ws"
-	"github.com/gobwas/ws/wsutil"
+	"github.com/gorilla/websocket"
 	sockets "github.com/nyelnizy/conversate-server/core"
 	"github.com/nyelnizy/conversate-server/events"
 	"github.com/nyelnizy/conversate-server/logs"
 	"github.com/nyelnizy/conversate-server/response"
 	"github.com/nyelnizy/conversate-server/utils"
 	"io"
-	"net"
+	"log"
 	"net/http"
 	"strings"
 )
 
 type SocketsHandler struct {
-	ConnectedClients map[string]net.Conn
-	Conn             net.Conn
-	Code             ws.OpCode
+	ConnectedClients map[string]*websocket.Conn
+	Conn             *websocket.Conn
+	Code             int
 	Context          context.Context
 }
 
 func NewSocketsHandler() *SocketsHandler {
 	return &SocketsHandler{
-		ConnectedClients: make(map[string]net.Conn),
+		ConnectedClients: make(map[string]*websocket.Conn),
 	}
 }
+
+var upgrader = websocket.Upgrader{}
 
 func (h *SocketsHandler) Handle(w http.ResponseWriter, r *http.Request) {
 	if r.Header.Get("Sec-WebSocket-Key") == "" {
 		return
 	}
-	c, _, _, err := ws.UpgradeHTTP(r, w)
+	//c, _, _, err := ws.UpgradeHTTP(r, w)
+	//if err != nil {
+	//	logs.LogErr(err)
+	//	return
+	//}
+	c, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
-		logs.LogErr(err)
+		log.Print("upgrade:", err)
 		return
 	}
 	// get client id from url and add to connected clients
@@ -43,14 +49,14 @@ func (h *SocketsHandler) Handle(w http.ResponseWriter, r *http.Request) {
 	logs.LogStr(fmt.Sprintf("New Connection -> %s \n", clientId))
 	h.ConnectedClients[clientId] = c
 	// close connection
-	defer func(c net.Conn, clientId string) {
+	defer func(c *websocket.Conn, clientId string) {
 		_ = c.Close()
 		logs.LogStr(fmt.Sprintf("Client %s Disconnected", clientId))
 		delete(h.ConnectedClients, clientId)
 	}(c, clientId)
 	// listen for requests from connected client
 	for {
-		message, op, err := wsutil.ReadClientData(c)
+		op, message, err := c.ReadMessage()
 		if err != nil {
 			if err != io.EOF {
 				logs.LogErr(err)
@@ -75,7 +81,7 @@ func (h *SocketsHandler) Process(message []byte) {
 			Data: utils.APIError,
 		}
 		b, _ := res.Encode()
-		_, _ = h.Conn.Write(b)
+		_ = h.Conn.WriteJSON(b)
 		logs.LogErr(err)
 	} else {
 		logs.LogStr(fmt.Sprintf("Receiced Request -> %s", requestPacket.Action))
