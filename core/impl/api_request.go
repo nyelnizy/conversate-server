@@ -3,6 +3,7 @@ package impl
 import (
 	"context"
 	"encoding/json"
+	"github.com/gorilla/websocket"
 	"github.com/nyelnizy/conversate-server/core"
 	"github.com/nyelnizy/conversate-server/logs"
 	"github.com/nyelnizy/conversate-server/response"
@@ -50,5 +51,5 @@ func (req *SocketApiRequest) Execute() *response.SocketResponseData {
 }
 
 func (req *SocketApiRequest) Respond(data []byte) error {
-	return req.RequestPacket.Conn.WriteJSON(data)
+	return req.RequestPacket.Conn.WriteMessage(websocket.TextMessage, data)
 }

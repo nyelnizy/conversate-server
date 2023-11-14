@@ -38,7 +38,6 @@ func (d *RequestDispatcher) ServeRequest(requestPacket *core.RequestPacket) {
 	action, err := d.ActionStore.GetAction(requestPacket.Action)
 	// create a new request (works even if action is nil)
 	apiRequest := NewSocketApiRequest(requestPacket, action)
-
 	if err != nil {
 		logs.LogErr(err)
 		res.Code = utils.NotfoundCode
