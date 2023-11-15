@@ -28,7 +28,11 @@ func NewSocketsHandler() *SocketsHandler {
 	}
 }
 
-var upgrader = websocket.Upgrader{}
+var upgrader = websocket.Upgrader{
+	CheckOrigin: func(r *http.Request) bool {
+		return true
+	},
+}
 
 func (h *SocketsHandler) Handle(w http.ResponseWriter, r *http.Request) {
 	if r.Header.Get("Sec-WebSocket-Key") == "" {
