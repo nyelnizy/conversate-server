@@ -61,9 +61,6 @@ func (d *RequestDispatcher) ServeRequest(requestPacket *core.RequestPacket) {
 	res.Id = requestPacket.Id
 	res.ClientId = requestPacket.ClientId
 	res.Action = requestPacket.Action
-	socketResponse, err := res.Encode()
-	if err != nil {
-		socketResponse = []byte(err.Error())
-	}
-	_ = apiRequest.Respond(socketResponse)
+	apiResponses.Enqueue(res)
+	_ = apiRequest.Respond()
 }

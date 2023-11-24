@@ -50,6 +50,21 @@ func (req *SocketApiRequest) Execute() *response.SocketResponseData {
 	return req.Action.Callback(b, ctx)
 }
 
-func (req *SocketApiRequest) Respond(data []byte) error {
-	return req.RequestPacket.Conn.WriteMessage(websocket.TextMessage, data)
+func (req *SocketApiRequest) Respond() error {
+	for !apiResponses.Empty() {
+		res, ok := apiResponses.Dequeue()
+		if !ok {
+			continue
+		}
+		sockResponse, _ := res.(*response.SocketResponseData)
+		socketResponse, err := sockResponse.Encode()
+		if err != nil {
+			socketResponse = []byte(err.Error())
+		}
+		err = req.RequestPacket.Conn.WriteMessage(websocket.TextMessage, socketResponse)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
