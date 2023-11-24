@@ -51,20 +51,24 @@ func (req *SocketApiRequest) Execute() *response.SocketResponseData {
 }
 
 func (req *SocketApiRequest) Respond() error {
-	for !apiResponses.Empty() {
-		res, ok := apiResponses.Dequeue()
-		if !ok {
-			continue
+	if !processingResponse {
+		processingResponse = true
+		for !apiResponses.Empty() {
+			res, ok := apiResponses.Dequeue()
+			if !ok {
+				continue
+			}
+			sockResponse, _ := res.(*response.SocketResponseData)
+			socketResponse, err := sockResponse.Encode()
+			if err != nil {
+				socketResponse = []byte(err.Error())
+			}
+			err = req.RequestPacket.Conn.WriteMessage(websocket.TextMessage, socketResponse)
+			if err != nil {
+				return err
+			}
 		}
-		sockResponse, _ := res.(*response.SocketResponseData)
-		socketResponse, err := sockResponse.Encode()
-		if err != nil {
-			socketResponse = []byte(err.Error())
-		}
-		err = req.RequestPacket.Conn.WriteMessage(websocket.TextMessage, socketResponse)
-		if err != nil {
-			return err
-		}
+		processingResponse = false
 	}
 	return nil
 }
