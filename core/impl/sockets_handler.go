@@ -62,11 +62,10 @@ func (h *SocketsHandler) Handle(w http.ResponseWriter, r *http.Request) {
 	for {
 		op, message, err := c.ReadMessage()
 		if err != nil {
-			if err != io.EOF {
-				logs.LogErr(err)
-				return
+			if err == io.EOF || websocket.IsUnexpectedCloseError(err, websocket.CloseGoingAway, websocket.CloseAbnormalClosure) {
+				continue
 			}
-			continue
+			break
 		}
 		h.Code = op
 		h.Conn = c
