@@ -5,39 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4d64359-2db0-4a82-8fed-67ac4969a4e9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/docs/docs_routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/docs_routes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/postman_generator.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.9a56f9c7.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.389b6d78.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.c20eebe7.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.59f642ee.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/Login.97d0125f.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/Login.3dfbe521.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.03e1d51f.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.bbba5f18.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.d88ad911.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.536ee9b9.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/axios.f8a65f21.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/axios.e9acc0d3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.87e316aa.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.40b1d780.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.39a07642.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/index.d20ae33e.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/uid.c9256555.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/uid.028bcf2f.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/use-key-composition.65efacf0.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/assets/use-key-composition.6aa43461.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/apple-icon-120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/icons/apple-icon-120x120.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/apple-icon-152x152.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/icons/apple-icon-152x152.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/apple-icon-167x167.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/icons/apple-icon-167x167.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/apple-icon-180x180.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/icons/apple-icon-180x180.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/favicon-128x128.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/icons/favicon-128x128.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/icons/favicon-16x16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/favicon-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/icons/favicon-32x32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/favicon-96x96.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/icons/favicon-96x96.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/icon-128x128.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/icons/icon-128x128.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/icon-192x192.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/icons/icon-192x192.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/icon-256x256.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/icons/icon-256x256.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/icon-384x384.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/icons/icon-384x384.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/icon-512x512.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/icons/icon-512x512.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/ms-icon-144x144.png" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/icons/ms-icon-144x144.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/safari-pinned-tab.svg" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/icons/safari-pinned-tab.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/docs/pwa/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/pwa/sw.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entry/entry.go" beforeDir="false" afterPath="$PROJECT_DIR$/entry/entry.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

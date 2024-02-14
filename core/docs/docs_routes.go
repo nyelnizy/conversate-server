@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/golang-jwt/jwt/v4"
-	docsparams "github.com/nyelnizy/conversate-server/core/docs/params"
 	"html/template"
 	"io/ioutil"
 	"log"
@@ -47,20 +46,6 @@ func RenderDocs(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 }
-
-func GenerateCollection(w http.ResponseWriter, r *http.Request) {
-	postmanActions := make(map[string]*docsparams.ApiDoc)
-	for _, a := range store.GetAllActions() {
-		postmanActions[a.Name] = a.ApiDoc
-	}
-	GeneratePostmanCollection(postmanActions)
-	w.Header().Set("Access-Control-Allow-Origin", "*")
-	_, err := w.Write([]byte("Generate Successfully"))
-	if err != nil {
-		return
-	}
-}
-
 func GetDocs(w http.ResponseWriter, r *http.Request) {
 
 	groupedFeatures := getFeatures()
