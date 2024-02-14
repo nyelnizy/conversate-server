@@ -1,7 +1,6 @@
 package conversate
 
 import (
-	"embed"
 	"flag"
 	"fmt"
 	sockets "github.com/nyelnizy/conversate-server/core"
@@ -13,6 +12,7 @@ import (
 	"log"
 	"mime"
 	"net/http"
+	"os"
 	"path/filepath"
 	"runtime"
 )
@@ -24,9 +24,6 @@ type server struct {
 func New(config *config.ServerConfig) *server {
 	return &server{config: config}
 }
-
-//go:embed *
-var content embed.FS
 
 func (s *server) Run(actions ...intfc.ActionSetup) {
 	impl.SetValidator(s.config.JwtValidator)
@@ -53,11 +50,14 @@ func (s *server) Run(actions ...intfc.ActionSetup) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	//fs := http.FileServer(http.Dir(filepath.Join(s.config.DocsConfig.BasePath, "../core/docs/html")))
-	//http.Handle("/", fs)
-	http.Handle("/", http.FileServer(http.FS(content)))
-	//http.Handle(fmt.Sprintf("/%s/", s.config.PublicFolder),
-	//	http.StripPrefix(fmt.Sprintf("/%s/", s.config.PublicFolder), fs))
+	path, err := os.Getwd()
+	if err != nil {
+		log.Fatal(err)
+	}
+	fs := http.FileServer(http.Dir(filepath.Join(path, s.config.PublicFolder)))
+	http.Handle("/", http.FileServer(http.Dir(path+"/docs")))
+	http.Handle(fmt.Sprintf("/%s/", s.config.PublicFolder),
+		http.StripPrefix(fmt.Sprintf("/%s/", s.config.PublicFolder), fs))
 	logs.LogStr(fmt.Sprintf("Waiting For Connections...: %s\n", s.config.Port))
 	var addr = flag.String("addr", fmt.Sprintf(":%s", s.config.Port), "http service address")
 	if s.config.TlsCert != nil {

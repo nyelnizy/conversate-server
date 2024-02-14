@@ -1,21 +1,23 @@
 package docs
 
 import (
-	"embed"
 	"encoding/json"
 	"fmt"
 	"github.com/golang-jwt/jwt/v4"
 	"html/template"
 	"io/ioutil"
+	"log"
 	"net/http"
+	"os"
 	"time"
 )
 
-//go:embed html
-var content embed.FS
-
 func RenderDocs(w http.ResponseWriter, r *http.Request) {
-	htmlContent, err := content.ReadFile("html/index.html")
+	path, err := os.Getwd()
+	if err != nil {
+		log.Fatal(err)
+	}
+	htmlContent, err := os.ReadFile(path + "/docs/index.html")
 	tmpl := template.Must(template.New("docs-tmpl").Parse(string(htmlContent)))
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
