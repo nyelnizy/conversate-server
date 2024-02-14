@@ -14,7 +14,6 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
-	"runtime"
 )
 
 type server struct {
@@ -55,7 +54,7 @@ func (s *server) Run(actions ...intfc.ActionSetup) {
 		log.Fatal(err)
 	}
 	fs := http.FileServer(http.Dir(filepath.Join(path, s.config.PublicFolder)))
-	fmt.Println(http.Dir(filepath.Join(path, "docs")))
+
 	http.Handle("/", http.FileServer(http.Dir(filepath.Join(path, "docs"))))
 	http.Handle(fmt.Sprintf("/%s/", s.config.PublicFolder),
 		http.StripPrefix(fmt.Sprintf("/%s/", s.config.PublicFolder), fs))
@@ -82,21 +81,16 @@ func (s *server) RunWithActions(actions map[string]*sockets.Action) {
 	// create a new handler to handle socket requests
 	h := impl.NewSocketsHandler()
 	http.HandleFunc("/api", h.Handle)
-
-	_, currentFile, _, ok := runtime.Caller(0)
-	if !ok {
-		log.Fatal("failed to retrieve current file")
-		return
-	}
-	dir := filepath.Dir(currentFile)
-	err := mime.AddExtensionType(".webmanifest", "application/manifest+json")
+	path, err := os.Getwd()
 	if err != nil {
 		log.Fatal(err)
 	}
-	fs := http.FileServer(http.Dir(filepath.Join(dir, "../core/docs/html")))
-	http.Handle("/", fs)
+	fs := http.FileServer(http.Dir(filepath.Join(path, s.config.PublicFolder)))
+	fmt.Println(http.Dir(filepath.Join(path, "docs")))
+	http.Handle("/", http.FileServer(http.Dir(filepath.Join(path, "docs"))))
 	http.Handle(fmt.Sprintf("/%s/", s.config.PublicFolder),
 		http.StripPrefix(fmt.Sprintf("/%s/", s.config.PublicFolder), fs))
+
 	logs.LogStr(fmt.Sprintf("Waiting For Connections...: %s\n", s.config.Port))
 	var addr = flag.String("addr", fmt.Sprintf(":%s", s.config.Port), "http service address")
 	if s.config.TlsCert != nil {
