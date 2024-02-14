@@ -55,7 +55,8 @@ func (s *server) Run(actions ...intfc.ActionSetup) {
 		log.Fatal(err)
 	}
 	fs := http.FileServer(http.Dir(filepath.Join(path, s.config.PublicFolder)))
-	http.Handle("/", http.FileServer(http.Dir(path+"/docs")))
+	fmt.Println(http.Dir(filepath.Join(path, "docs")))
+	http.Handle("/", http.FileServer(http.Dir(filepath.Join(path, "docs"))))
 	http.Handle(fmt.Sprintf("/%s/", s.config.PublicFolder),
 		http.StripPrefix(fmt.Sprintf("/%s/", s.config.PublicFolder), fs))
 	logs.LogStr(fmt.Sprintf("Waiting For Connections...: %s\n", s.config.Port))
