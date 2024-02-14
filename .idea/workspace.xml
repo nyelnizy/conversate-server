@@ -6,6 +6,49 @@
   <component name="ChangeListManager">
     <list default="true" id="a4d64359-2db0-4a82-8fed-67ac4969a4e9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/docs_routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/docs_routes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/ErrorNotFound.389b6d78.js" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/ErrorNotFound.389b6d78.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/IndexPage.59f642ee.js" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/IndexPage.59f642ee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/KFOkCnqEu92Fr1MmgVxIIzQ.34e9582c.woff" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/KFOkCnqEu92Fr1MmgVxIIzQ.34e9582c.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/KFOlCnqEu92Fr1MmEU9fBBc-.9ce7f3ac.woff" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/KFOlCnqEu92Fr1MmEU9fBBc-.9ce7f3ac.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/KFOlCnqEu92Fr1MmSU5fBBc-.bf14c7d7.woff" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/KFOlCnqEu92Fr1MmSU5fBBc-.bf14c7d7.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/KFOlCnqEu92Fr1MmWUlfBBc-.e0fd57c0.woff" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/KFOlCnqEu92Fr1MmWUlfBBc-.e0fd57c0.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/KFOlCnqEu92Fr1MmYUtfBBc-.f6537e32.woff" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/KFOlCnqEu92Fr1MmYUtfBBc-.f6537e32.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/KFOmCnqEu92Fr1Mu4mxM.f2abf7fb.woff" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/KFOmCnqEu92Fr1Mu4mxM.f2abf7fb.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/Login.3dfbe521.js" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/Login.3dfbe521.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/Login.ee19607d.css" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/Login.ee19607d.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.54e4023f.css" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/MainLayout.54e4023f.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/MainLayout.bbba5f18.js" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/MainLayout.bbba5f18.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/QBtn.536ee9b9.js" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/QBtn.536ee9b9.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/axios.e9acc0d3.js" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/axios.e9acc0d3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/docs-store.40b1d780.js" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/docs-store.40b1d780.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/fastclick.8a4a8267.js" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/fastclick.8a4a8267.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/flUhRq6tzZclQEJ-Vdg-IuiaDsNa.fd84f88b.woff" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/flUhRq6tzZclQEJ-Vdg-IuiaDsNa.fd84f88b.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.4a4dbc62.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.4a4dbc62.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.02927198.css" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/index.02927198.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/index.d20ae33e.js" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/index.d20ae33e.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/uid.028bcf2f.js" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/uid.028bcf2f.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/assets/use-key-composition.6aa43461.js" beforeDir="false" afterPath="$PROJECT_DIR$/entry/assets/use-key-composition.6aa43461.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/entry/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/apple-icon-120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/entry/icons/apple-icon-120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/apple-icon-152x152.png" beforeDir="false" afterPath="$PROJECT_DIR$/entry/icons/apple-icon-152x152.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/apple-icon-167x167.png" beforeDir="false" afterPath="$PROJECT_DIR$/entry/icons/apple-icon-167x167.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/apple-icon-180x180.png" beforeDir="false" afterPath="$PROJECT_DIR$/entry/icons/apple-icon-180x180.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/favicon-128x128.png" beforeDir="false" afterPath="$PROJECT_DIR$/entry/icons/favicon-128x128.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/entry/icons/favicon-16x16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/favicon-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/entry/icons/favicon-32x32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/favicon-96x96.png" beforeDir="false" afterPath="$PROJECT_DIR$/entry/icons/favicon-96x96.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/icon-128x128.png" beforeDir="false" afterPath="$PROJECT_DIR$/entry/icons/icon-128x128.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/icon-192x192.png" beforeDir="false" afterPath="$PROJECT_DIR$/entry/icons/icon-192x192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/icon-256x256.png" beforeDir="false" afterPath="$PROJECT_DIR$/entry/icons/icon-256x256.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/icon-384x384.png" beforeDir="false" afterPath="$PROJECT_DIR$/entry/icons/icon-384x384.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/icon-512x512.png" beforeDir="false" afterPath="$PROJECT_DIR$/entry/icons/icon-512x512.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/ms-icon-144x144.png" beforeDir="false" afterPath="$PROJECT_DIR$/entry/icons/ms-icon-144x144.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/icons/safari-pinned-tab.svg" beforeDir="false" afterPath="$PROJECT_DIR$/entry/icons/safari-pinned-tab.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/docs/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/entry/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/docs/pwa/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/entry/sw.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entry/entry.go" beforeDir="false" afterPath="$PROJECT_DIR$/entry/entry.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,23 +102,23 @@
     "WebServerToolWindowFactoryState": "false",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/home/nyel/Documents/Hardworking Tech/Golang/conversate-server/core/docs"
+    "last_opened_file_path": "/home/nyel/Documents/Hardworking Tech/Golang/conversate-server/entry"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/entry" />
       <recent name="$PROJECT_DIR$/core/docs" />
       <recent name="$PROJECT_DIR$/core/docs/pwa" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/core/impl" />
-      <recent name="$PROJECT_DIR$/example" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/entry" />
       <recent name="$PROJECT_DIR$/example" />
       <recent name="C:\Users\nyelnizy\Documents\OrionEdge\libraries\conversate\server\golang\core\docs\params" />
       <recent name="C:\Users\nyelnizy\Documents\OrionEdge\libraries\conversate\server\golang\entry\inputs" />
       <recent name="C:\Users\nyelnizy\Documents\OrionEdge\libraries\conversate\server\golang\test\actions" />
-      <recent name="C:\Users\nyelnizy\Documents\OrionEdge\libraries\conversate\server\golang\core" />
     </key>
   </component>
   <component name="RunManager">

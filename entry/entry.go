@@ -1,6 +1,7 @@
 package conversate
 
 import (
+	"embed"
 	"flag"
 	"fmt"
 	sockets "github.com/nyelnizy/conversate-server/core"
@@ -24,6 +25,9 @@ func New(config *config.ServerConfig) *server {
 	return &server{config: config}
 }
 
+//go:embed *
+var content embed.FS
+
 func (s *server) Run(actions ...intfc.ActionSetup) {
 	impl.SetValidator(s.config.JwtValidator)
 	store := impl.NewDefaultActionStore()
@@ -36,7 +40,7 @@ func (s *server) Run(actions ...intfc.ActionSetup) {
 	d := impl.NewRequestDispatcher(store)
 	d.RegisterRequestListener()
 	impl.InitializeQueue()
-	//box := rice.MustFindBox("../core/docs/pwa/assets")
+	//box := rice.MustFindBox("../core/docs/html/assets")
 	//assetsFileServer := http.StripPrefix("/assets/", http.FileServer(box.HTTPBox()))
 	//http.Handle("/assets/", assetsFileServer)
 	http.HandleFunc("/docs", docs.RenderDocs)
@@ -45,21 +49,15 @@ func (s *server) Run(actions ...intfc.ActionSetup) {
 	// create a new handler to handle socket requests
 	h := impl.NewSocketsHandler()
 	http.HandleFunc("/api", h.Handle)
-
-	_, currentFile, _, ok := runtime.Caller(0)
-	if !ok {
-		log.Fatal("failed to retrieve current file")
-		return
-	}
-	dir := filepath.Dir(currentFile)
 	err := mime.AddExtensionType(".webmanifest", "application/manifest+json")
 	if err != nil {
 		log.Fatal(err)
 	}
-	fs := http.FileServer(http.Dir(filepath.Join(dir, "../core/docs/pwa")))
-	http.Handle("/", fs)
-	http.Handle(fmt.Sprintf("/%s/", s.config.PublicFolder),
-		http.StripPrefix(fmt.Sprintf("/%s/", s.config.PublicFolder), fs))
+	//fs := http.FileServer(http.Dir(filepath.Join(s.config.DocsConfig.BasePath, "../core/docs/html")))
+	//http.Handle("/", fs)
+	http.Handle("/", http.FileServer(http.FS(content)))
+	//http.Handle(fmt.Sprintf("/%s/", s.config.PublicFolder),
+	//	http.StripPrefix(fmt.Sprintf("/%s/", s.config.PublicFolder), fs))
 	logs.LogStr(fmt.Sprintf("Waiting For Connections...: %s\n", s.config.Port))
 	var addr = flag.String("addr", fmt.Sprintf(":%s", s.config.Port), "http service address")
 	if s.config.TlsCert != nil {
@@ -94,7 +92,7 @@ func (s *server) RunWithActions(actions map[string]*sockets.Action) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fs := http.FileServer(http.Dir(filepath.Join(dir, "../core/docs/pwa")))
+	fs := http.FileServer(http.Dir(filepath.Join(dir, "../core/docs/html")))
 	http.Handle("/", fs)
 	http.Handle(fmt.Sprintf("/%s/", s.config.PublicFolder),
 		http.StripPrefix(fmt.Sprintf("/%s/", s.config.PublicFolder), fs))
