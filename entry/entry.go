@@ -42,7 +42,6 @@ func (s *server) Run(actions ...intfc.ActionSetup) {
 	http.HandleFunc("/docs", docs.RenderDocs)
 	http.HandleFunc("/api-docs", docs.GetDocs)
 	http.HandleFunc("/api-login", docs.Login)
-	http.HandleFunc("/generate-postman-collection", docs.GenerateCollection)
 	// create a new handler to handle socket requests
 	h := impl.NewSocketsHandler()
 	http.HandleFunc("/api", h.Handle)
@@ -81,7 +80,6 @@ func (s *server) RunWithActions(actions map[string]*sockets.Action) {
 	http.HandleFunc("/docs", docs.RenderDocs)
 	http.HandleFunc("/api-docs", docs.GetDocs)
 	http.HandleFunc("/api-login", docs.Login)
-	http.HandleFunc("/generate-postman-collection", docs.GenerateCollection)
 	// create a new handler to handle socket requests
 	h := impl.NewSocketsHandler()
 	http.HandleFunc("/api", h.Handle)
