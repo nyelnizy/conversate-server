@@ -87,7 +87,9 @@ func (h *SocketsHandler) Process(message []byte) {
 		_ = h.Conn.WriteJSON(b)
 		logs.LogErr(err)
 	} else {
-		logs.LogStr(fmt.Sprintf("Receiced Request -> %s", requestPacket.Action))
+		logs.LogStr(requestPacket.Id)
+		fmt.Println(requestPacket.Parameter)
+		logs.LogStr(fmt.Sprintf("Received Request -> %s", requestPacket.Action))
 		apiRequests.Enqueue(requestPacket)
 		// notify dispatcher to consume request packet
 		events.Notify()

@@ -15,6 +15,11 @@ func NewDefaultActionStore() *DefaultActionStore {
 		actions,
 	}
 }
+func NewStoreWithActions(actions map[string]*sockets.Action) *DefaultActionStore {
+	return &DefaultActionStore{
+		actions,
+	}
+}
 func (a *DefaultActionStore) AddAction(newAction *sockets.Action) {
 	a.actions[newAction.Name] = newAction
 }

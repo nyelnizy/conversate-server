@@ -35,11 +35,7 @@ func main() {
 		Port:         "6002",
 		PublicFolder: "public",
 		JwtValidator: &impl.DefaultJwtValidator{
-			Issuer:        "",
-			Secret:        "",
-			Audience:      "",
 			AuthUserIdKey: "id",
-			SubjectKey:    "userTypeId",
 		},
 	}
 
