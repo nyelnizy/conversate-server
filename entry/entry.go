@@ -12,8 +12,8 @@ import (
 	"log"
 	"mime"
 	"net/http"
-	"os"
 	"path/filepath"
+	"runtime"
 )
 
 type server struct {
@@ -45,17 +45,20 @@ func (s *server) Run(actions ...intfc.ActionSetup) {
 	http.HandleFunc("/generate-postman-collection", docs.GenerateCollection)
 	// create a new handler to handle socket requests
 	h := impl.NewSocketsHandler()
-	http.HandleFunc("/", h.Handle)
+	http.HandleFunc("/api", h.Handle)
 
-	path, err := os.Getwd()
+	_, currentFile, _, ok := runtime.Caller(0)
+	if !ok {
+		log.Fatal("failed to retrieve current file")
+		return
+	}
+	dir := filepath.Dir(currentFile)
+	err := mime.AddExtensionType(".webmanifest", "application/manifest+json")
 	if err != nil {
 		log.Fatal(err)
 	}
-	err = mime.AddExtensionType(".webmanifest", "application/manifest+json")
-	if err != nil {
-		log.Fatal(err)
-	}
-	fs := http.FileServer(http.Dir(filepath.Join(path, "pwa/assets")))
+	fs := http.FileServer(http.Dir(filepath.Join(dir, "../core/docs/pwa")))
+	http.Handle("/", fs)
 	http.Handle(fmt.Sprintf("/%s/", s.config.PublicFolder),
 		http.StripPrefix(fmt.Sprintf("/%s/", s.config.PublicFolder), fs))
 	logs.LogStr(fmt.Sprintf("Waiting For Connections...: %s\n", s.config.Port))
@@ -66,7 +69,7 @@ func (s *server) Run(actions ...intfc.ActionSetup) {
 		log.Fatal(http.ListenAndServe(*addr, nil))
 	}
 }
-func (s *server) StartServer(actions map[string]*sockets.Action) {
+func (s *server) RunWithActions(actions map[string]*sockets.Action) {
 	impl.SetValidator(s.config.JwtValidator)
 	store := impl.NewStoreWithActions(actions)
 	// actions dispatcher
@@ -75,26 +78,26 @@ func (s *server) StartServer(actions map[string]*sockets.Action) {
 	d := impl.NewRequestDispatcher(store)
 	d.RegisterRequestListener()
 	impl.InitializeQueue()
-	//box := rice.MustFindBox("../core/docs/pwa/assets")
-	//assetsFileServer := http.StripPrefix("/assets/", http.FileServer(box.HTTPBox()))
-	//http.Handle("/assets/", assetsFileServer)
 	http.HandleFunc("/docs", docs.RenderDocs)
 	http.HandleFunc("/api-docs", docs.GetDocs)
 	http.HandleFunc("/api-login", docs.Login)
 	http.HandleFunc("/generate-postman-collection", docs.GenerateCollection)
 	// create a new handler to handle socket requests
 	h := impl.NewSocketsHandler()
-	http.HandleFunc("/", h.Handle)
+	http.HandleFunc("/api", h.Handle)
 
-	path, err := os.Getwd()
+	_, currentFile, _, ok := runtime.Caller(0)
+	if !ok {
+		log.Fatal("failed to retrieve current file")
+		return
+	}
+	dir := filepath.Dir(currentFile)
+	err := mime.AddExtensionType(".webmanifest", "application/manifest+json")
 	if err != nil {
 		log.Fatal(err)
 	}
-	err = mime.AddExtensionType(".webmanifest", "application/manifest+json")
-	if err != nil {
-		log.Fatal(err)
-	}
-	fs := http.FileServer(http.Dir(filepath.Join(path, "pwa/assets")))
+	fs := http.FileServer(http.Dir(filepath.Join(dir, "../core/docs/pwa")))
+	http.Handle("/", fs)
 	http.Handle(fmt.Sprintf("/%s/", s.config.PublicFolder),
 		http.StripPrefix(fmt.Sprintf("/%s/", s.config.PublicFolder), fs))
 	logs.LogStr(fmt.Sprintf("Waiting For Connections...: %s\n", s.config.Port))

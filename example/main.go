@@ -37,6 +37,17 @@ func main() {
 		JwtValidator: &impl.DefaultJwtValidator{
 			AuthUserIdKey: "id",
 		},
+		DocsConfig: &docsparams.DocsConfig{
+			AppName:         "",
+			AppVersion:      "",
+			AppDescription:  "",
+			PostManBaseUrl:  "",
+			DocsEmail:       "",
+			DocsPassword:    "",
+			DocsJwtIssuer:   "",
+			DocsJwtAudience: "",
+			DocsJwtSecret:   "",
+		},
 	}
 
 	server := conversate.New(conf)

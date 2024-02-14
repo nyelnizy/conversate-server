@@ -1,7 +1,6 @@
 package docs
 
 import (
-	"embed"
 	"encoding/json"
 	"fmt"
 	"github.com/golang-jwt/jwt/v4"
@@ -10,18 +9,33 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
+	"path/filepath"
+	"runtime"
 	"time"
 )
 
-//go:embed pwa
-var content embed.FS
-
 func RenderDocs(w http.ResponseWriter, r *http.Request) {
-	htmlContent, err := content.ReadFile("pwa/index.html")
+	_, currentFile, _, ok := runtime.Caller(0)
+	if !ok {
+		http.Error(w, "Content not found", http.StatusNotFound)
+		return
+	}
+	dir := filepath.Dir(currentFile)
+
+	// Construct the path to the HTML file relative to the package directory
+	htmlPath := filepath.Join(dir, "pwa", "index.html")
+
+	// Read the HTML content
+	content, err := os.ReadFile(htmlPath)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 	if err != nil {
 		log.Fatal(err)
 	}
-	tmpl := template.Must(template.New("docs-tmpl").Parse(string(htmlContent)))
+	tmpl := template.Must(template.New("docs-tmpl").Parse(string(content)))
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
